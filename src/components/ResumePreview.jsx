@@ -16,8 +16,15 @@ function ResumePreview({ data }) {
           <div className="job-title">{jobTitle}</div>
         </div>
 
-        <div className="main-content"></div>
+        <div className="main-content">
+          <div className="main-content-section">
+            <div className="resume-heading">PROFILE</div>
+            <div className="profile-summary">{data.summary}</div>
+          </div>
+        </div>
+
         <div className="sidebar">
+          
         </div>
       </div>
     </>
