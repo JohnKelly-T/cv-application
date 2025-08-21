@@ -3,11 +3,21 @@
 
   --a4-ratio: 210 / 297;
 
+  /* resume variables */
+  --resume-primary-color: 205, 100%, 30%;
+  --resume-text-color: 205, 10%, 30%;
+  --resume-sidebar-color: 205, 25%, 95%;
+
+
   background-color: hsl(var(--background-color-hsl));
   min-height: 100vh;
   display: flex;
   justify-content: space-evenly;
   padding: 2rem;
+}
+
+#root * {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 
 .form-container {
@@ -16,6 +26,53 @@
 }
 
 .cv-container {
-  min-height: 90vh;
-  width: calc(90vh * var(--a4-ratio)); /* A4 dimensions */
+  --height: min(90vh, 297mm);
+  height: var(--height);
+  width: calc(var(--height) * var(--a4-ratio)); /* A4 dimensions */
+  container-type: inline-size;
+}
+
+.resume {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto 1fr;
+  gap: 1em;
+  width: 100%;
+  height: 100%;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  color: hsl(var(--resume-text-color));
+  font-size: 16pt;
+  padding: 2em;
+}
+
+@container (width < 209mm) {
+  .resume {
+    font-size: 1.9cqh;
+  }
+}
+
+.resume-header {
+  grid-column: 1 / span 2;
+  font-size: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.full-name {
+  font-size: 1.4em;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: hsl(var(--resume-primary-color));
+}
+
+.job-title {
+  font-size: 0.8em;
+  letter-spacing: 0.15em;
+  color: hsl(var(--resume-primary-color));
+}
+
+.sidebar {
+  background: hsl(var(--resume-sidebar-color));
 }
