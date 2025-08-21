@@ -1,3 +1,5 @@
+import { PhoneIcon, GlobeIcon, EmailIcon, GithubIcon, PinIcon} from "../icons";
+
 function ResumePreview({ data }) {
 
   let fullName = data.middleInitial ? 
@@ -17,14 +19,42 @@ function ResumePreview({ data }) {
         </div>
 
         <div className="main-content">
-          <div className="main-content-section">
+          <div className="resume-section">
             <div className="resume-heading">PROFILE</div>
             <div className="profile-summary">{data.summary}</div>
           </div>
         </div>
 
         <div className="sidebar">
-          
+          <div className="resume-section">
+            <div className="resume-heading">CONTACT</div>
+            <div className="contact-info-container">
+              <div className="contact-info">
+                <PhoneIcon />
+                {data.number}
+              </div>
+
+              <div className="contact-info">
+                <EmailIcon />
+                {data.email}
+              </div>
+
+              <div className="contact-info">
+                <GlobeIcon />
+                {data.website}
+              </div>
+
+              <div className="contact-info">
+                <GithubIcon />
+                {data.github}
+              </div>
+
+              <div className="contact-info">
+                <PinIcon />
+                {data.location}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
