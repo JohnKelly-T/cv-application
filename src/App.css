@@ -7,6 +7,7 @@
   --resume-primary-color: 205, 100%, 30%;
   --resume-text-color: 205, 10%, 30%;
   --resume-sidebar-color: 205, 25%, 95%;
+  --resume-separator-color: 205, 30%, 70%;
 
 
   background-color: hsl(var(--background-color-hsl));
@@ -71,6 +72,39 @@
   font-size: 0.8em;
   letter-spacing: 0.15em;
   color: hsl(var(--resume-primary-color));
+}
+
+.resume-heading {
+  font-size: 0.8em;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: hsl(var(--resume-primary-color));
+}
+
+.main-content {
+  padding-top: 0.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.main-content-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.main-content-section:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  bottom: -0.8em;
+  width: 100%;
+  border-top: 0.1em dashed hsl(var(--resume-separator-color));
+}
+
+.profile-summary {
+  font-size: 0.6em;
 }
 
 .sidebar {
