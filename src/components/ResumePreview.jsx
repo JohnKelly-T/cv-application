@@ -15,15 +15,25 @@ function ResumePreview({ data }) {
   fullName = fullName ? fullName.toUpperCase() : '';
 
   let jobTitle = data.jobTitle ? data.jobTitle.toUpperCase() : null;
-  let experiences = (data.experiences && data.experiences.length !== 0) ? data.experiences.map((experience, index) => {
-              return <Experience {...experience} key={index} />
-  }) : null;
+  let experiences = (data.experiences && data.experiences.length !== 0) ? 
+    data.experiences.map((experience, index) => {
+                return <Experience {...experience} key={index} />
+    }) : null;
 
-  let educations = (data.educations && data.educations.length !== 0) ? data.educations.map((education, index) => {
-              return <Education {...education} key={index} />
-  }) : null;
+  let educations = (data.educations && data.educations.length !== 0) ? 
+    data.educations.map((education, index) => {
+                return <Education {...education} key={index} />
+    }) : null;
   
-        
+  let skills = (data.skills && data.skills.length !== 0) ? 
+    <ul className="sidebar-list">
+      {
+        data.skills.map((skill, index) => (
+          <li key={index}>{skill}</li>
+        ))
+      }
+    </ul> : null;
+
   return (
     <>
       <div className="resume">
@@ -76,6 +86,10 @@ function ResumePreview({ data }) {
                 </ContactInfo>
               </div> : null
             }
+          </ResumeSection>
+
+          <ResumeSection heading="SKILLS">
+            {skills ? skills : null}
           </ResumeSection>
         </div>
       </div>
