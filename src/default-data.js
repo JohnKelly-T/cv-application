@@ -41,5 +41,15 @@ export const defaultData = {
       description: 'Lorem ipsum dolor sit amet, consectetur adici elit, sed do\nEiusmod tempor incididunt ut labore et dolore magna aliqua\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris'
     }
   ], 
-  skills: ['Skill 1 here', 'Another skill here', 'Third skill', 'More skill']
+  skills: ['Skill 1 here', 'Another skill here', 'Third skill', 'More skill'],
+  more: [
+    {
+      heading: 'TOOLS', 
+      list: ['First tool here', 'Another tool there', 'Cool Tool', 'And more tools']
+    },
+    {
+      heading: 'INTERESTS', 
+      list: ['Hobby here', 'Interesting topic here', 'Interested field', 'More interests']
+    }
+  ]
 };
