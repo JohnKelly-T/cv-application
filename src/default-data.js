@@ -8,5 +8,21 @@ export const defaultData = {
   email: 'example@gmail.com',
   website: 'amazingportfolio.com',
   github: 'github.com/userName',
-  location: 'Anywhere 123 Any St.'
+  location: 'Anywhere 123 Any St.',
+  experiences: [
+    {
+      company: 'Company1',
+      position: 'Front-end engineer',
+      startYear: '2024',
+      endYear: '2025',
+      description: 'Lorem ipsum dolor sit amet, consectetur adici elit, sed do\nEiusmod tempor incididunt ut labore et dolore magna aliqua\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris'
+    },
+    {
+      company: 'Company2',
+      position: 'Front-end engineer',
+      startYear: '2023',
+      endYear: '2024',
+      description: 'Lorem ipsum dolor sit amet, consectetur adici elit, sed do\nEiusmod tempor incididunt ut labore et dolore magna aliqua\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris'
+    }
+  ] 
 };
