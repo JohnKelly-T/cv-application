@@ -1,4 +1,5 @@
 import { PhoneIcon, GlobeIcon, EmailIcon, GithubIcon, PinIcon} from "../icons";
+import Experience from "./Experience";
 
 function ResumePreview({ data }) {
 
@@ -22,6 +23,13 @@ function ResumePreview({ data }) {
           <div className="resume-section">
             <div className="resume-heading">PROFILE</div>
             <div className="profile-summary">{data.summary}</div>
+          </div>
+
+          <div className="resume-section">
+            <div className="resume-heading">WORK EXPERIENCE</div>
+            {data.experiences.map((experience, index) => {
+              return <Experience {...experience} key={index} />
+            })}
           </div>
         </div>
 
