@@ -3,6 +3,7 @@ import ResumeSection from "./ResumeSection";
 import Experience from "./Experience";
 import Education from "./Education";
 import ContactInfo from "./ContactInfo";
+import SideBarList from "./SidebarList";
 
 function ResumePreview({ data }) {
 
@@ -17,22 +18,13 @@ function ResumePreview({ data }) {
   let jobTitle = data.jobTitle ? data.jobTitle.toUpperCase() : null;
   let experiences = (data.experiences && data.experiences.length !== 0) ? 
     data.experiences.map((experience, index) => {
-                return <Experience {...experience} key={index} />
+      return <Experience {...experience} key={index} />
     }) : null;
 
   let educations = (data.educations && data.educations.length !== 0) ? 
     data.educations.map((education, index) => {
-                return <Education {...education} key={index} />
+      return <Education {...education} key={index} />
     }) : null;
-  
-  let skills = (data.skills && data.skills.length !== 0) ? 
-    <ul className="sidebar-list">
-      {
-        data.skills.map((skill, index) => (
-          <li key={index}>{skill}</li>
-        ))
-      }
-    </ul> : null;
 
   return (
     <>
@@ -52,11 +44,11 @@ function ResumePreview({ data }) {
           </ResumeSection>
 
           <ResumeSection heading="WORK EXPERIENCE">
-            { experiences ? experiences : null }
+            { experiences }
           </ResumeSection>
 
           <ResumeSection heading="EDUCATION">
-            { educations ? educations : null }
+            { educations }
           </ResumeSection>
         </div>
 
@@ -89,8 +81,19 @@ function ResumePreview({ data }) {
           </ResumeSection>
 
           <ResumeSection heading="SKILLS">
-            {skills ? skills : null}
+            <SideBarList list={data.skills}/>
           </ResumeSection>
+
+          {
+            data.more ?
+            data.more.map((section, index) => {
+              return (
+                <ResumeSection key={index} heading={section.heading}>
+                  <SideBarList list={section.list}/>
+                </ResumeSection>
+              )
+            }) : null
+          }
         </div>
       </div>
     </>
