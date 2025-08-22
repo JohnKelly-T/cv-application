@@ -24,5 +24,21 @@ export const defaultData = {
       endYear: '2024',
       description: 'Lorem ipsum dolor sit amet, consectetur adici elit, sed do\nEiusmod tempor incididunt ut labore et dolore magna aliqua\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris'
     }
-  ] 
+  ], 
+  educations: [
+    {
+      school: 'School 1',
+      course: 'BS Computer Science',
+      startYear: '2024',
+      endYear: '2025',
+      description: 'Lorem ipsum dolor sit amet, consectetur adici elit, sed do\nEiusmod tempor incididunt ut labore et dolore magna aliqua\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris'
+    },
+    {
+      school: 'School 2',
+      course: 'STEM',
+      startYear: '2023',
+      endYear: '2024',
+      description: 'Lorem ipsum dolor sit amet, consectetur adici elit, sed do\nEiusmod tempor incididunt ut labore et dolore magna aliqua\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris'
+    }
+  ], 
 };
