@@ -41,4 +41,5 @@ export const defaultData = {
       description: 'Lorem ipsum dolor sit amet, consectetur adici elit, sed do\nEiusmod tempor incididunt ut labore et dolore magna aliqua\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris'
     }
   ], 
+  skills: ['Skill 1 here', 'Another skill here', 'Third skill', 'More skill']
 };
