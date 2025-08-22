@@ -109,6 +109,9 @@
 }
 
 .sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
   background: hsl(var(--resume-sidebar-color));
   padding: 1em;
   border-radius: 0 0.5em 0.5em 0;
@@ -146,6 +149,12 @@
 
 .description {
   grid-column: 1 / span 2;
+  margin: 0;
+  padding: 0 0 0 2em;
+}
+
+.sidebar-list {
+  font-size: 0.55em;
   margin: 0;
   padding: 0 0 0 2em;
 }
