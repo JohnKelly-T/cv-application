@@ -108,6 +108,10 @@
   font-size: 0.55em;
 }
 
+.profile-summary, .description {
+  line-height: 1.4em;
+}
+
 .sidebar {
   display: flex;
   flex-direction: column;
