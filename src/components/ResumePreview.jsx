@@ -1,6 +1,7 @@
 import { PhoneIcon, GlobeIcon, EmailIcon, GithubIcon, PinIcon} from "../icons";
 import ResumeSection from "./ResumeSection";
 import Experience from "./Experience";
+import ContactInfo from "./ContactInfo";
 
 function ResumePreview({ data }) {
 
@@ -41,32 +42,30 @@ function ResumePreview({ data }) {
 
         <div className="sidebar">
           <ResumeSection heading="CONTACT">
-            <div className="contact-info-container">
-              <div className="contact-info">
-                <PhoneIcon />
-                {data.number}
-              </div>
+            {
+              (data.number && data.email && data.website && data.github && data.location) ? 
+              <div className="contact-info-container">
+                <ContactInfo Icon={PhoneIcon}>
+                  {data.number}
+                </ContactInfo>
 
-              <div className="contact-info">
-                <EmailIcon />
-                {data.email}
-              </div>
+                <ContactInfo Icon={EmailIcon}>
+                  {data.email}
+                </ContactInfo>
 
-              <div className="contact-info">
-                <GlobeIcon />
-                {data.website}
-              </div>
+                <ContactInfo Icon={GlobeIcon}>
+                  {data.website}
+                </ContactInfo>
 
-              <div className="contact-info">
-                <GithubIcon />
-                {data.github}
-              </div>
+                <ContactInfo Icon={GithubIcon}>
+                  {data.github}
+                </ContactInfo>
 
-              <div className="contact-info">
-                <PinIcon />
-                {data.location}
-              </div>
-            </div>
+                <ContactInfo Icon={PinIcon}>
+                  {data.location}
+                </ContactInfo>
+              </div> : null
+            }
           </ResumeSection>
         </div>
       </div>
