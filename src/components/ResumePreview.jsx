@@ -1,6 +1,7 @@
 import { PhoneIcon, GlobeIcon, EmailIcon, GithubIcon, PinIcon} from "../icons";
 import ResumeSection from "./ResumeSection";
 import Experience from "./Experience";
+import Education from "./Education";
 import ContactInfo from "./ContactInfo";
 
 function ResumePreview({ data }) {
@@ -17,6 +18,11 @@ function ResumePreview({ data }) {
   let experiences = (data.experiences && data.experiences.length !== 0) ? data.experiences.map((experience, index) => {
               return <Experience {...experience} key={index} />
   }) : null;
+
+  let educations = (data.educations && data.educations.length !== 0) ? data.educations.map((education, index) => {
+              return <Education {...education} key={index} />
+  }) : null;
+  
         
   return (
     <>
@@ -37,6 +43,10 @@ function ResumePreview({ data }) {
 
           <ResumeSection heading="WORK EXPERIENCE">
             { experiences ? experiences : null }
+          </ResumeSection>
+
+          <ResumeSection heading="EDUCATION">
+            { educations ? educations : null }
           </ResumeSection>
         </div>
 
