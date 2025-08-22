@@ -1,16 +1,22 @@
 import { PhoneIcon, GlobeIcon, EmailIcon, GithubIcon, PinIcon} from "../icons";
+import ResumeSection from "./ResumeSection";
 import Experience from "./Experience";
 
 function ResumePreview({ data }) {
 
-  let fullName = data.middleInitial ? 
-    data.firstName + " " + data.middleInitial + " " + data.lastName : 
-    data.firstName + " " + data.lastName;
+  let fullName = '';
 
-  fullName = fullName.toUpperCase();
+  fullName += data.firstName ? data.firstName : '';
+  fullName += data.middleInitial ? (" " + data.middleInitial) : '';
+  fullName += data.lastName ? (" " + data.lastName) : '';
 
-  let jobTitle = data.jobTitle.toUpperCase();
+  fullName = fullName ? fullName.toUpperCase() : '';
 
+  let jobTitle = data.jobTitle ? data.jobTitle.toUpperCase() : null;
+  let experiences = (data.experiences && data.experiences.length !== 0) ? data.experiences.map((experience, index) => {
+              return <Experience {...experience} key={index} />
+  }) : null;
+        
   return (
     <>
       <div className="resume">
@@ -20,22 +26,21 @@ function ResumePreview({ data }) {
         </div>
 
         <div className="main-content">
-          <div className="resume-section">
-            <div className="resume-heading">PROFILE</div>
-            <div className="profile-summary">{data.summary}</div>
-          </div>
+          <ResumeSection heading="PROFILE">
+            {
+              data.summary ? 
+                <div className="profile-summary">{data.summary}</div> 
+                : null
+            }
+          </ResumeSection>
 
-          <div className="resume-section">
-            <div className="resume-heading">WORK EXPERIENCE</div>
-            {data.experiences.map((experience, index) => {
-              return <Experience {...experience} key={index} />
-            })}
-          </div>
+          <ResumeSection heading="WORK EXPERIENCE">
+            { experiences ? experiences : null }
+          </ResumeSection>
         </div>
 
         <div className="sidebar">
-          <div className="resume-section">
-            <div className="resume-heading">CONTACT</div>
+          <ResumeSection heading="CONTACT">
             <div className="contact-info-container">
               <div className="contact-info">
                 <PhoneIcon />
@@ -62,7 +67,7 @@ function ResumePreview({ data }) {
                 {data.location}
               </div>
             </div>
-          </div>
+          </ResumeSection>
         </div>
       </div>
     </>
