@@ -1,4 +1,4 @@
-function Experience ({company, startYear, endYear, description}) {
+function Experience ({company, position, startYear, endYear, description}) {
   let period = '';
 
   if (startYear && endYear) {
@@ -16,6 +16,7 @@ function Experience ({company, startYear, endYear, description}) {
         <div className="period">
           {period}
         </div>
+        <div className="position">{position}</div>
         <ul className="description">
           {description.split('\n').map( (line, index) => {
             return <li key={index}>{line}</li>
