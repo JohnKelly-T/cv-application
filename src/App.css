@@ -10,6 +10,10 @@
   --form-background: 0, 0%, 100%;
   --form-stroke: 205, 20%, 70%;
 
+  --input-background: 205, 25%, 95%;
+  --input-stroke: 205, 20%, 90%;
+  --input-focus-stroke: 205, 100%, 80%;
+
   /* resume variables */
   --resume-primary-color: 205, 100%, 30%;
   --resume-text-color: 205, 10%, 30%;
@@ -108,6 +112,26 @@
   padding: 0;
   max-height: 0px;
 }
+
+.input-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-label input {
+  background: hsl(var(--input-background));
+  border: 1px solid hsl(var(--input-stroke));
+  border-radius: 5px;
+  outline: none;
+  color: inherit;
+  padding: 0.5rem 0.8rem;
+}
+
+.input-label input:focus {
+  box-shadow: 0 0 0 2px hsl(var(--input-focus-stroke));
+}
+
+/* CV Container styles */
 
 .cv-container {
   --height: min(90vh, 297mm);
