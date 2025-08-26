@@ -66,7 +66,7 @@
   transform: rotate(0);
 }
 
-.form-accordion.collapsed .arrow {
+.form-accordion.expanded .arrow {
   transform: rotate(-180deg);
 }
 
