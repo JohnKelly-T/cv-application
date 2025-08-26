@@ -1,4 +1,4 @@
-import { PhoneIcon, GlobeIcon, EmailIcon, GithubIcon, PinIcon} from "../icons";
+import { PhoneIcon, GlobeIcon, EmailIcon, GithubIcon, PinIcon } from "../icons";
 import ResumeSection from "./ResumeSection";
 import Experience from "./Experience";
 import Education from "./Education";
@@ -6,25 +6,28 @@ import ContactInfo from "./ContactInfo";
 import SideBarList from "./SidebarList";
 
 function ResumePreview({ data }) {
+  let fullName = "";
 
-  let fullName = '';
+  fullName += data.firstName ? data.firstName : "";
+  fullName += data.middleInitial ? " " + data.middleInitial : "";
+  fullName += data.lastName ? " " + data.lastName : "";
 
-  fullName += data.firstName ? data.firstName : '';
-  fullName += data.middleInitial ? (" " + data.middleInitial) : '';
-  fullName += data.lastName ? (" " + data.lastName) : '';
-
-  fullName = fullName ? fullName.toUpperCase() : '';
+  fullName = fullName ? fullName.toUpperCase() : "";
 
   let jobTitle = data.jobTitle ? data.jobTitle.toUpperCase() : null;
-  let experiences = (data.experiences && data.experiences.length !== 0) ? 
-    data.experiences.map((experience, index) => {
-      return <Experience {...experience} key={index} />
-    }) : null;
+  let experiences =
+    data.experiences && data.experiences.length !== 0
+      ? data.experiences.map((experience, index) => {
+          return <Experience {...experience} key={index} />;
+        })
+      : null;
 
-  let educations = (data.educations && data.educations.length !== 0) ? 
-    data.educations.map((education, index) => {
-      return <Education {...education} key={index} />
-    }) : null;
+  let educations =
+    data.educations && data.educations.length !== 0
+      ? data.educations.map((education, index) => {
+          return <Education {...education} key={index} />;
+        })
+      : null;
 
   return (
     <>
@@ -36,64 +39,50 @@ function ResumePreview({ data }) {
 
         <div className="main-content">
           <ResumeSection heading="PROFILE">
-            {
-              data.summary ? 
-                <div className="profile-summary">{data.summary}</div> 
-                : null
-            }
+            {data.summary ? (
+              <div className="profile-summary">{data.summary}</div>
+            ) : null}
           </ResumeSection>
 
-          <ResumeSection heading="WORK EXPERIENCE">
-            { experiences }
-          </ResumeSection>
+          <ResumeSection heading="WORK EXPERIENCE">{experiences}</ResumeSection>
 
-          <ResumeSection heading="EDUCATION">
-            { educations }
-          </ResumeSection>
+          <ResumeSection heading="EDUCATION">{educations}</ResumeSection>
         </div>
 
         <div className="sidebar">
           <ResumeSection heading="CONTACT">
-            {
-              (data.phone && data.email && data.website && data.github && data.location) ? 
+            {data.phone &&
+            data.email &&
+            data.website &&
+            data.github &&
+            data.location ? (
               <div className="contact-info-container">
-                <ContactInfo Icon={PhoneIcon}>
-                  {data.phone}
-                </ContactInfo>
+                <ContactInfo Icon={PhoneIcon}>{data.phone}</ContactInfo>
 
-                <ContactInfo Icon={EmailIcon}>
-                  {data.email}
-                </ContactInfo>
+                <ContactInfo Icon={EmailIcon}>{data.email}</ContactInfo>
 
-                <ContactInfo Icon={GlobeIcon}>
-                  {data.website}
-                </ContactInfo>
+                <ContactInfo Icon={GlobeIcon}>{data.website}</ContactInfo>
 
-                <ContactInfo Icon={GithubIcon}>
-                  {data.github}
-                </ContactInfo>
+                <ContactInfo Icon={GithubIcon}>{data.github}</ContactInfo>
 
-                <ContactInfo Icon={PinIcon}>
-                  {data.location}
-                </ContactInfo>
-              </div> : null
-            }
+                <ContactInfo Icon={PinIcon}>{data.location}</ContactInfo>
+              </div>
+            ) : null}
           </ResumeSection>
 
           <ResumeSection heading="SKILLS">
-            <SideBarList list={data.skills}/>
+            <SideBarList list={data.skills} />
           </ResumeSection>
 
-          {
-            data.more ?
-            data.more.map((section, index) => {
-              return (
-                <ResumeSection key={index} heading={section.heading}>
-                  <SideBarList list={section.list}/>
-                </ResumeSection>
-              )
-            }) : null
-          }
+          {data.more
+            ? data.more.map((section, index) => {
+                return (
+                  <ResumeSection key={index} heading={section.heading}>
+                    <SideBarList list={section.list} />
+                  </ResumeSection>
+                );
+              })
+            : null}
         </div>
       </div>
     </>
