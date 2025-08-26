@@ -151,6 +151,11 @@
   font-weight: 600;
 }
 
+.position {
+  grid-column: 1 / span 2;
+  margin-top: -0.2rem;
+}
+
 .description {
   grid-column: 1 / span 2;
   margin: 0;
