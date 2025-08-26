@@ -3,6 +3,13 @@
 
   --a4-ratio: 210 / 297;
 
+  /* form variables */
+  --form-primary-color: 205, 100%, 30%;
+  --form-highlight-color: 205, 50%, 95%;
+  --form-text-color: 205, 40%, 30%;
+  --form-background: 0, 0%, 100%;
+  --form-stroke: 205, 20%, 70%;
+
   /* resume variables */
   --resume-primary-color: 205, 100%, 30%;
   --resume-text-color: 205, 10%, 30%;
@@ -25,6 +32,81 @@
 .form-container {
   min-height: 90vh;
   width: 40%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  color: hsl(var(--form-primary-color));
+}
+
+.site-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.form-accordion {
+  color: hsl(var(--form-text-color));
+  background: hsl(var(--form-background));
+  border: 1px solid hsl(var(--form-stroke));
+  border-radius: 10px;
+}
+
+.form-accordion .arrow {
+  transition: transform 200ms ease;
+}
+
+.form-accordion.collapsed .arrow {
+  transform: rotate(0);
+}
+
+.form-accordion.collapsed .arrow {
+  transform: rotate(-180deg);
+}
+
+.form-accordion svg {
+  width: 1.5rem;
+  aspect-ratio: 1;
+}
+
+.form-accordion .label-button{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem;
+  background: none;
+  border: none;
+  color: inherit; 
+  border-radius: 10px;
+  font-weight: 600;
+  transition: background 200ms ease;
+}
+
+.form-accordion.expanded .label-button {
+  background: hsl(var(--form-highlight-color));
+  box-shadow: inset 0 0 0 0.3rem white;
+}
+
+.label-button:hover {
+  cursor: pointer;
+}
+
+.form-accordion .label {
+  margin-right: auto;
+}
+
+.form {
+  padding: 1rem;
+  transition: max-height 200ms ease;
+}
+
+.collapsed .form {
+  overflow: hidden;
+  padding: 0;
+  max-height: 0px;
 }
 
 .cv-container {
