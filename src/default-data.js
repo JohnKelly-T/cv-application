@@ -23,6 +23,13 @@ export const defaultData = {
       startYear: '2023',
       endYear: '2024',
       description: 'Lorem ipsum dolor sit amet, consectetur adici elit, sed do\nEiusmod tempor incididunt ut labore et dolore magna aliqua\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris'
+    },
+    {
+      company: 'Company3',
+      position: 'Front-end engineer',
+      startYear: '2023',
+      endYear: '2024',
+      description: 'Lorem ipsum dolor sit amet, consectetur adici elit, sed do\nEiusmod tempor incididunt ut labore et dolore magna aliqua\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris'
     }
   ], 
   educations: [
