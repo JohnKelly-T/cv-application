@@ -51,10 +51,10 @@ function ResumePreview({ data }) {
 
         <div className="sidebar">
           <ResumeSection heading="CONTACT">
-            {data.phone &&
-            data.email &&
-            data.website &&
-            data.github &&
+            {data.phone ||
+            data.email ||
+            data.website ||
+            data.github ||
             data.location ? (
               <div className="contact-info-container">
                 <ContactInfo Icon={PhoneIcon}>{data.phone}</ContactInfo>
