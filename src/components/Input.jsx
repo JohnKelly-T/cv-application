@@ -5,6 +5,7 @@ function Input({ data, dataProperty, label, type, onChange }) {
       <input
         type={type}
         value={data[dataProperty]}
+        name={dataProperty}
         onChange={(e) => onChange({ ...data, [dataProperty]: e.target.value })}
       />
     </label>
