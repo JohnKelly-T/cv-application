@@ -2,10 +2,15 @@ import FormAccordion from "./FormAccordion";
 import { ProfileIcon } from "../icons";
 import Input from "./Input";
 
-function PersonalInfoForm({ data, setData }) {
+function PersonalInfoForm({ data, setData, isActive, onShow }) {
   return (
     <>
-      <FormAccordion label="Personal Information" Icon={ProfileIcon}>
+      <FormAccordion
+        label="Personal Information"
+        Icon={ProfileIcon}
+        isActive={isActive}
+        onShow={onShow}
+      >
         <div className="form" id="personal-information">
           <div className="full-name-container">
             <Input

@@ -1,10 +1,15 @@
 import { ProfileSummaryIcon } from "../icons";
 import FormAccordion from "./FormAccordion";
 
-function ProfileSummaryForm({ data, setData }) {
+function ProfileSummaryForm({ data, setData, isActive, onShow }) {
   return (
     <>
-      <FormAccordion label="Profile Summary" Icon={ProfileSummaryIcon}>
+      <FormAccordion
+        label="Profile Summary"
+        Icon={ProfileSummaryIcon}
+        isActive={isActive}
+        onShow={onShow}
+      >
         <div className="form" id="profile-summary">
           <div className="profile-summary-label">
             Highlight your professional experience, skills, and accomplishments

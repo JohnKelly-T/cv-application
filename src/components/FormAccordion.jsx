@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { ArrowDownIcon } from "../icons";
 
-function FormAccordion({ label, Icon, children }) {
-  const [accordionState, setAccordionState] = useState("collapsed");
+function FormAccordion({ label, Icon, isActive, onShow, children }) {
+  let accordionState = isActive ? "expanded" : "collapsed";
 
   function handleOnClick() {
-    let nextState = accordionState === "collapsed" ? "expanded" : "collapsed";
-
-    setAccordionState(nextState);
+    if (isActive) {
+      onShow(null);
+    } else {
+      onShow();
+    }
   }
 
   return (
