@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import ResumePreview from "./components/ResumePreview";
 import PersonalInfoForm from "./components/PersonalInfoForm";
+import ProfileSummaryForm from "./components/ProfileSummaryForm";
 import { defaultData } from "./default-data";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         </div>
 
         <PersonalInfoForm data={data} setData={setData}></PersonalInfoForm>
+        <ProfileSummaryForm data={data} setData={setData}></ProfileSummaryForm>
       </div>
       <div className="cv-container">
         <ResumePreview data={data}></ResumePreview>
