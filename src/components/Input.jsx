@@ -1,13 +1,8 @@
-function Input({ data, dataProperty, label, type, onChange }) {
+function Input({ value, label, type, onChange }) {
   return (
     <label className="input-label">
       {label}
-      <input
-        type={type}
-        value={data[dataProperty]}
-        name={dataProperty}
-        onChange={(e) => onChange({ ...data, [dataProperty]: e.target.value })}
-      />
+      <input type={type} value={value ? value : ""} onChange={onChange} />
     </label>
   );
 }
