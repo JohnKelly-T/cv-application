@@ -170,6 +170,26 @@
   grid-column: 1 / span 2;
 }
 
+#profile-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;  
+}
+
+textarea {
+  background: hsl(var(--input-background));
+  border: 1px solid hsl(var(--input-stroke));
+  border-radius: 5px;
+  outline: none;
+  color: inherit;
+  padding: 0.3rem 0.5rem;
+  resize: none;
+}
+
+textarea:focus {
+  box-shadow: 0 0 0 2px hsl(var(--input-focus-stroke));
+}
+
 /* CV Container styles */
 
 .cv-container {
