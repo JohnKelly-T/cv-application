@@ -3,6 +3,7 @@ import "./App.css";
 import ResumePreview from "./components/ResumePreview";
 import PersonalInfoForm from "./components/PersonalInfoForm";
 import ProfileSummaryForm from "./components/ProfileSummaryForm";
+import WorkExperienceForm from "./components/WorkExperienceForm";
 import { defaultData } from "./default-data";
 
 function App() {
@@ -22,13 +23,19 @@ function App() {
           setData={setData}
           isActive={activeFormIndex === 0}
           onShow={(i = 0) => setActiveFormIndex(i)}
-        ></PersonalInfoForm>
+        />
         <ProfileSummaryForm
           data={data}
           setData={setData}
           isActive={activeFormIndex === 1}
           onShow={(i = 1) => setActiveFormIndex(i)}
-        ></ProfileSummaryForm>
+        />
+        <WorkExperienceForm
+          data={data}
+          setData={setData}
+          isActive={activeFormIndex === 2}
+          onShow={(i = 2) => setActiveFormIndex(i)}
+        />
       </div>
       <div className="cv-container">
         <ResumePreview data={data}></ResumePreview>
