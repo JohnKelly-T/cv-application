@@ -86,7 +86,7 @@
   aspect-ratio: 1;
 }
 
-.form-accordion .label-button{
+.form-accordion > .label-button{
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -100,12 +100,12 @@
   transition: background 200ms ease;
 }
 
-.form-accordion.expanded .label-button {
+.form-accordion.expanded > .label-button {
   background: hsl(var(--form-highlight-color));
   box-shadow: inset 0 0 0 0.3rem white;
 }
 
-.label-button:hover {
+.form-accordion > .label-button:hover {
   cursor: pointer;
 }
 
@@ -181,6 +181,71 @@
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+}
+
+.item-accordion {
+  border: 1px solid hsl(var(--form-stroke));
+  border-radius: 10px;
+}
+
+.item-accordion .label-button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0 0.2rem;
+}
+
+.item-content {
+  padding: 0.3rem 1rem 1rem;
+}
+
+.item-accordion.collapsed .item-content {
+  overflow: hidden;
+  padding: 0;
+  max-height: 0;
+}
+
+.item-accordion .label {
+  font-weight: 600;
+  flex: 1;
+  padding: 0.6rem;
+}
+
+.textarea-input {
+  grid-column: 1 / span 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  color: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem;
+}
+
+.work-experience-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.add-item-button {
+  align-self: end;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  font-weight: 600;
+  color: hsl(var(--form-primary-color));
+  cursor: pointer;
+  margin-top: 1rem;
+  margin-bottom: -0.5rem;
 }
 
 textarea {
