@@ -177,6 +177,12 @@
   gap: 0.8rem;  
 }
 
+#work-experience {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
 textarea {
   background: hsl(var(--input-background));
   border: 1px solid hsl(var(--input-stroke));
