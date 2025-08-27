@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { ArrowDownIcon } from "../icons";
 
 function FormAccordion({ label, Icon, isActive, onShow, children }) {
