@@ -1,8 +1,13 @@
 import FormAccordion from "./FormAccordion";
 import { ProfileIcon } from "../icons";
 import Input from "./Input";
+import js from "@eslint/js";
 
 function PersonalInfoForm({ data, setData, isActive, onShow }) {
+  function handleOnchange(property, e) {
+    setData({ ...data, [property]: e.target.value });
+  }
+
   return (
     <>
       <FormAccordion
@@ -15,58 +20,49 @@ function PersonalInfoForm({ data, setData, isActive, onShow }) {
           <div className="full-name-container">
             <Input
               label="First Name"
-              data={data}
-              dataProperty="firstName"
-              onChange={setData}
+              value={data.firstName}
+              onChange={(e) => handleOnchange("firstName", e)}
             />
             <Input
               label="Last Name"
-              data={data}
-              dataProperty="lastName"
-              onChange={setData}
+              value={data.lastName}
+              onChange={(e) => handleOnchange("lastName", e)}
             />
             <Input
               label="M.I."
-              data={data}
-              dataProperty="middleInitial"
-              onChange={setData}
+              value={data.middleInitial}
+              onChange={(e) => handleOnchange("middleInitial", e)}
             />
           </div>
           <Input
             label="Job Title"
-            data={data}
-            dataProperty="jobTitle"
-            onChange={setData}
+            value={data.jobTitle}
+            onChange={(e) => handleOnchange("jobTitle", e)}
           />
           <Input
             label="Phone"
-            data={data}
-            dataProperty="phone"
-            onChange={setData}
+            value={data.phone}
+            onChange={(e) => handleOnchange("phone", e)}
           />
           <Input
             label="Email"
-            data={data}
-            dataProperty="email"
-            onChange={setData}
+            value={data.email}
+            onChange={(e) => handleOnchange("email", e)}
           />
           <Input
             label="Github"
-            data={data}
-            dataProperty="github"
-            onChange={setData}
+            value={data.github}
+            onChange={(e) => handleOnchange("github", e)}
           />
           <Input
             label="Personal Website"
-            data={data}
-            dataProperty="website"
-            onChange={setData}
+            value={data.website}
+            onChange={(e) => handleOnchange("website", e)}
           />
           <Input
             label="Location"
-            data={data}
-            dataProperty="location"
-            onChange={setData}
+            value={data.location}
+            onChange={(e) => handleOnchange("location", e)}
           />
         </div>
       </FormAccordion>
