@@ -4,6 +4,7 @@ import ResumePreview from "./components/ResumePreview";
 import PersonalInfoForm from "./components/PersonalInfoForm";
 import ProfileSummaryForm from "./components/ProfileSummaryForm";
 import WorkExperienceForm from "./components/WorkExperienceForm";
+import EducationForm from "./components/EducationForm";
 import { defaultData } from "./default-data";
 
 function App() {
@@ -35,6 +36,12 @@ function App() {
           setData={setData}
           isActive={activeFormIndex === 2}
           onShow={(i = 2) => setActiveFormIndex(i)}
+        />
+        <EducationForm
+          data={data}
+          setData={setData}
+          isActive={activeFormIndex === 3}
+          onShow={(i = 3) => setActiveFormIndex(i)}
         />
       </div>
       <div className="cv-container">
