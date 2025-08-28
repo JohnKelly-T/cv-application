@@ -1,12 +1,12 @@
-function Education({ school, startYear, endYear, description }) {
+function Education({ school, course, startDate, endDate, description }) {
   let period = "";
 
-  if (startYear && endYear) {
-    period = startYear + " - " + endYear;
-  } else if (startYear) {
-    period += startYear;
-  } else if (endYear) {
-    period += endYear;
+  if (startDate && endDate) {
+    period = startDate + " - " + endDate;
+  } else if (startDate) {
+    period += startDate;
+  } else if (endDate) {
+    period += endDate;
   }
 
   return (
@@ -14,6 +14,7 @@ function Education({ school, startYear, endYear, description }) {
       <div className="experience">
         <div className="school">{school}</div>
         <div className="period">{period}</div>
+        <div className="course">{course}</div>
         <ul className="description">
           {description
             ? description.split("\n").map((line, index) => {
