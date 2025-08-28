@@ -16,9 +16,11 @@ function Experience({ company, position, startDate, endDate, description }) {
         <div className="period">{period}</div>
         <div className="position">{position}</div>
         <ul className="description">
-          {description.split("\n").map((line, index) => {
-            return <li key={index}>{line}</li>;
-          })}
+          {description
+            ? description.split("\n").map((line, index) => {
+                return <li key={index}>{line}</li>;
+              })
+            : null}
         </ul>
       </div>
     </>
