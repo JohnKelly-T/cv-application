@@ -1,7 +1,6 @@
 import FormAccordion from "./FormAccordion";
 import { ProfileIcon } from "../icons";
 import Input from "./Input";
-import js from "@eslint/js";
 
 function PersonalInfoForm({ data, setData, isActive, onShow }) {
   function handleOnchange(property, e) {
