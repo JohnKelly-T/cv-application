@@ -177,7 +177,7 @@
   gap: 0.8rem;  
 }
 
-#work-experience {
+#work-experience, #education {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -227,7 +227,7 @@
   padding: 0.3rem;
 }
 
-.work-experience-item {
+.work-experience-item, .education-item{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.8rem;
@@ -388,7 +388,7 @@ textarea:focus {
   font-weight: 600;
 }
 
-.position {
+.position, .course {
   grid-column: 1 / span 2;
   margin-top: -0.2rem;
 }
