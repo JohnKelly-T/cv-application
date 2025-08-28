@@ -8,6 +8,34 @@ import TextArea from "./TextArea";
 function WorkExperienceForm({ data, setData, isActive, onShow }) {
   const [activeItemIndex, setActiveItemIndex] = useState(0);
 
+  function handleOnAdd() {
+    if (data.experiences) {
+      // make copy of experiences list
+      let newExperiences = [...data.experiences];
+
+      // Add empty object to list
+      newExperiences.push({});
+
+      setData({ ...data, experiences: newExperiences });
+    } else {
+      setData({
+        ...data,
+        experiences: [
+          {
+            company: "",
+            position: "",
+            startDate: "",
+            endDate: "",
+            description: "",
+          },
+        ],
+      });
+    }
+
+    // set the new active index to last index for next render
+    setActiveItemIndex(data.experiences.length);
+  }
+
   function handleOnchange(index, property, e) {
     let newExperiences = [...data.experiences];
     newExperiences[index] = {
@@ -28,13 +56,20 @@ function WorkExperienceForm({ data, setData, isActive, onShow }) {
       <div className="form" id="work-experience">
         {data.experiences
           ? data.experiences.map((experience, index) => {
+              let label = "";
+
+              if (experience.position && experience.company) {
+                label = experience.position + ", " + experience.company;
+              } else if (experience.position) {
+                label = experience.position;
+              } else if (experience.company) {
+                label = experience.company;
+              }
+
               return (
                 <ItemAccordion
                   key={index}
-                  label={
-                    experience.position +
-                    (experience.company ? ", " + experience.company : "")
-                  }
+                  label={label ? label : "Job position, Company"}
                   isActive={activeItemIndex === index}
                   onShow={(i = index) => setActiveItemIndex(i)}
                 >
@@ -74,7 +109,7 @@ function WorkExperienceForm({ data, setData, isActive, onShow }) {
             })
           : null}
 
-        <button className="add-item-button">
+        <button className="add-item-button" onClick={handleOnAdd}>
           <AddIcon /> Add work experience
         </button>
       </div>
