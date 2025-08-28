@@ -71,7 +71,7 @@ function ResumePreview({ data }) {
           </ResumeSection>
 
           <ResumeSection heading="SKILLS">
-            <SideBarList list={data.skills} />
+            {data.skills ? <SideBarList list={data.skills} /> : null}
           </ResumeSection>
 
           {data.more
