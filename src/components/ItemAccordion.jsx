@@ -1,6 +1,6 @@
 import { ArrowDownIconLineLight, DeleteIconLight } from "../icons";
 
-function ItemAccordion({ label, children, isActive, onShow }) {
+function ItemAccordion({ label, children, isActive, onShow, onDelete }) {
   let accordionState = isActive ? "expanded" : "collapsed";
 
   function handleOnClick() {
@@ -22,7 +22,7 @@ function ItemAccordion({ label, children, isActive, onShow }) {
           className="delete-button"
           onClick={(e) => {
             e.stopPropagation();
-            console.log("delete button clicked");
+            onDelete();
           }}
         >
           <DeleteIconLight />

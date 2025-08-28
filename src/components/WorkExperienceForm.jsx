@@ -36,6 +36,21 @@ function WorkExperienceForm({ data, setData, isActive, onShow }) {
     setActiveItemIndex(data.experiences.length);
   }
 
+  function handleOnDelete(index) {
+    // make copy of experiences list
+    let newExperiences = [...data.experiences];
+
+    // remove item at index
+    newExperiences.splice(index, 1);
+
+    setData({ ...data, experiences: newExperiences });
+
+    // update active index
+    if (activeItemIndex !== 0) {
+      setActiveItemIndex((prevIndex) => prevIndex - 1);
+    }
+  }
+
   function handleOnchange(index, property, e) {
     let newExperiences = [...data.experiences];
     newExperiences[index] = {
@@ -72,6 +87,7 @@ function WorkExperienceForm({ data, setData, isActive, onShow }) {
                   label={label ? label : "Job position, Company"}
                   isActive={activeItemIndex === index}
                   onShow={(i = index) => setActiveItemIndex(i)}
+                  onDelete={() => handleOnDelete(index)}
                 >
                   <div className="work-experience-item">
                     <Input
