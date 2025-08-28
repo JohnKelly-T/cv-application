@@ -265,6 +265,8 @@ textarea:focus {
 /* CV Container styles */
 
 .cv-container {
+  position: sticky;
+  top: 2rem;
   --height: min(90vh, 297mm);
   height: var(--height);
   width: calc(var(--height) * var(--a4-ratio)); /* A4 dimensions */
