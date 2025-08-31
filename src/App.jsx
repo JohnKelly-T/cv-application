@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./App.css";
+import "./styles/App.css";
 import ResumePreview from "./components/ResumePreview";
 import PersonalInfoForm from "./components/PersonalInfoForm";
 import ProfileSummaryForm from "./components/ProfileSummaryForm";
