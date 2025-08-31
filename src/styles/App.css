@@ -270,6 +270,24 @@
   flex: 1;
 }
 
+#more {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+#more .item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.section-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
 input {
   background: hsl(var(--input-background));
   border: 1px solid hsl(var(--input-stroke));
