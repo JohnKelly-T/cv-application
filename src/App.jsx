@@ -6,6 +6,7 @@ import ProfileSummaryForm from "./components/ProfileSummaryForm";
 import WorkExperienceForm from "./components/WorkExperienceForm";
 import EducationForm from "./components/EducationForm";
 import SkillsForm from "./components/SkillsForm";
+import MoreForm from "./components/MoreForm";
 import { defaultData } from "./default-data";
 
 function App() {
@@ -50,6 +51,12 @@ function App() {
           isActive={activeFormIndex === 4}
           onShow={(i = 4) => setActiveFormIndex(i)}
         />
+        <MoreForm
+          data={data}
+          setData={setData}
+          isActive={activeFormIndex === 5}
+          onShow={(i = 5) => setActiveFormIndex(i)}
+        ></MoreForm>
       </div>
       <div className="cv-container">
         <ResumePreview data={data}></ResumePreview>
