@@ -57,7 +57,7 @@ export const defaultData = {
   skills: ["Skill 1 here", "Another skill here", "Third skill", "More skill"],
   more: [
     {
-      heading: "TOOLS",
+      heading: "Tools",
       list: [
         "First tool here",
         "Another tool there",
@@ -66,7 +66,7 @@ export const defaultData = {
       ],
     },
     {
-      heading: "INTERESTS",
+      heading: "Interests",
       list: [
         "Hobby here",
         "Interesting topic here",
