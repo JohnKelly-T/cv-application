@@ -41,7 +41,7 @@ function SkillsForm({ data, setData, isActive, onShow }) {
                   key={index}
                   value={skill}
                   onChange={(e) => handleOnChange(index, e)}
-                  onDelete={(e) => handleOnDelete(index)}
+                  onDelete={() => handleOnDelete(index)}
                 />
               );
             })
