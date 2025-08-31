@@ -27,7 +27,15 @@ function SkillsForm({ data, setData, isActive, onShow }) {
 
     newSkills.splice(index, 1);
 
-    setData({ ...data, skills: newSkills });
+    let newData = { ...data };
+
+    if (newSkills.length === 0) {
+      newData.skills = newSkills;
+    } else {
+      newData.skills = newSkills;
+    }
+
+    setData(newData);
   }
 
   return (
