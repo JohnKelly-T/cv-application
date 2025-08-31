@@ -17,6 +17,8 @@ function EducationForm({ data, setData, isActive, onShow }) {
       newEducations.push({});
 
       setData({ ...data, educations: newEducations });
+      // set the new active index to last index for next render
+      setActiveItemIndex(data.educations.length);
     } else {
       setData({
         ...data,
@@ -31,9 +33,6 @@ function EducationForm({ data, setData, isActive, onShow }) {
         ],
       });
     }
-
-    // set the new active index to last index for next render
-    setActiveItemIndex(data.educations.length);
   }
 
   function handleOnDelete(index) {
