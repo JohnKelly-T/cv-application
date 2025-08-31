@@ -409,6 +409,12 @@ textarea:focus {
   padding: 1em;
   border-radius: 0 0.5em 0.5em 0;
   color: hsl(var(--sidebar-text-color));
+  max-width: 11em;
+}
+
+.sidebar li {
+  text-wrap: wrap;
+  overflow-wrap: anywhere;
 }
 
 .contact-info-container {
@@ -422,10 +428,13 @@ textarea:focus {
   display: flex;
   font-size: inherit;
   gap: 0.6em;
+  text-wrap: wrap;
+  overflow-wrap: anywhere;
 }
 
 .contact-info svg {
   width: 1.5em;
+  min-width: 1.5em;
   aspect-ratio: 1;
 }
 
