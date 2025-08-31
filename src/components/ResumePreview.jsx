@@ -77,7 +77,10 @@ function ResumePreview({ data }) {
           {data.more
             ? data.more.map((section, index) => {
                 return (
-                  <ResumeSection key={index} heading={section.heading}>
+                  <ResumeSection
+                    key={index}
+                    heading={section.heading.toUpperCase()}
+                  >
                     <SideBarList list={section.list} />
                   </ResumeSection>
                 );
