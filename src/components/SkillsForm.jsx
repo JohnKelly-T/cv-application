@@ -12,10 +12,14 @@ function SkillsForm({ data, setData, isActive, onShow }) {
   }
 
   function handleOnAdd() {
-    let newSkills = [...data.skills];
-    newSkills.push("");
+    if (data.skills) {
+      let newSkills = [...data.skills];
+      newSkills.push("");
 
-    setData({ ...data, skills: newSkills });
+      setData({ ...data, skills: newSkills });
+    } else {
+      setData({ ...data, skills: [""] });
+    }
   }
 
   function handleOnDelete(index) {
@@ -47,7 +51,7 @@ function SkillsForm({ data, setData, isActive, onShow }) {
             })
           : null}
         <button className="add-item-button" onClick={handleOnAdd}>
-          <AddIcon /> Add education
+          <AddIcon /> Add skill
         </button>
       </div>
     </FormAccordion>
