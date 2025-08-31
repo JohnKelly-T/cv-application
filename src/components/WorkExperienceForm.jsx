@@ -17,6 +17,9 @@ function WorkExperienceForm({ data, setData, isActive, onShow }) {
       newExperiences.push({});
 
       setData({ ...data, experiences: newExperiences });
+
+      // set the new active index to last index for next render
+      setActiveItemIndex(data.experiences.length);
     } else {
       setData({
         ...data,
@@ -31,9 +34,6 @@ function WorkExperienceForm({ data, setData, isActive, onShow }) {
         ],
       });
     }
-
-    // set the new active index to last index for next render
-    setActiveItemIndex(data.experiences.length);
   }
 
   function handleOnDelete(index) {
