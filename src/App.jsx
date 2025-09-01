@@ -24,6 +24,16 @@ function App() {
     }
   }
 
+  function resetForm() {
+    let response = confirm(
+      "Are you sure you want to reset the form? All entered data will be lost.",
+    );
+
+    if (response) {
+      setData(defaultData);
+    }
+  }
+
   return (
     <>
       <div className="form-container">
@@ -77,7 +87,7 @@ function App() {
         <button className="clear-button" onClick={clearForm}>
           <DeleteIcon />
         </button>
-        <button className="reset-button">
+        <button className="reset-button" onClick={resetForm}>
           <ResetIcon />
         </button>
         <button className="print-button">
