@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { useReactToPrint } from "react-to-print";
 import "./styles/App.css";
 import ResumePreview from "./components/ResumePreview";
 import PersonalInfoForm from "./components/PersonalInfoForm";
@@ -14,6 +15,9 @@ import { DeleteIcon, ResetIcon, PrinterIcon } from "./icons";
 function App() {
   const [data, setData] = useState(defaultData);
   const [activeFormIndex, setActiveFormIndex] = useState(0);
+
+  const contentRef = useRef(null);
+  const reactToPrintFn = useReactToPrint({ contentRef });
 
   function clearForm() {
     let response = confirm(
@@ -80,8 +84,8 @@ function App() {
           onShow={(i = 5) => setActiveFormIndex(i)}
         ></MoreForm>
       </div>
-      <div className="cv-container">
-        <ResumePreview data={data}></ResumePreview>
+      <div className="cv-container" >
+        <ResumePreview data={data} contentRef={contentRef}></ResumePreview>
       </div>
 
       <div className="buttons-container">
@@ -91,7 +95,7 @@ function App() {
         <button className="reset-button" onClick={resetForm}>
           <ResetIcon />
         </button>
-        <button className="print-button">
+        <button className="print-button" onClick={reactToPrintFn}>
           <PrinterIcon />
         </button>
       </div>

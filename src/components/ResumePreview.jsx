@@ -5,7 +5,7 @@ import Education from "./Education";
 import ContactInfo from "./ContactInfo";
 import SideBarList from "./SidebarList";
 
-function ResumePreview({ data }) {
+function ResumePreview({ data, contentRef }) {
   let fullName = "";
 
   fullName += data.firstName ? data.firstName : "";
@@ -31,7 +31,7 @@ function ResumePreview({ data }) {
 
   return (
     <>
-      <div className="resume">
+      <div className="resume" ref={contentRef}>
         <div className="resume-header">
           <div className="full-name">{fullName}</div>
           <div className="job-title">{jobTitle}</div>
