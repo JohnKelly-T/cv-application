@@ -8,6 +8,7 @@ import EducationForm from "./components/EducationForm";
 import SkillsForm from "./components/SkillsForm";
 import MoreForm from "./components/MoreForm";
 import { defaultData } from "./default-data";
+import { dataTemplate } from "./data-template";
 import { DeleteIcon, ResetIcon, PrinterIcon } from "./icons";
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
     );
 
     if (response) {
-      setData({});
+      setData(dataTemplate);
     }
   }
 

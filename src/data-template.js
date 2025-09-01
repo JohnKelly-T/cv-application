@@ -1,0 +1,16 @@
+export const dataTemplate = {
+  firstName: "",
+  lastName: "",
+  middleInitial: "",
+  jobTitle: "",
+  summary: "",
+  phone: "",
+  email: "",
+  website: "",
+  github: "",
+  location: "",
+  experiences: [],
+  educations: [],
+  skills: [],
+  more: [],
+};
