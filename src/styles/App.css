@@ -319,6 +319,13 @@ textarea:focus {
   container-type: inline-size;
 }
 
+.preview-size {
+  text-align: center;
+  padding-top: 0.5rem;
+  font-size: 0.8rem;
+  color: hsl(var(--form-text-color));
+}
+
 .resume {
   /* resume variables */
   --resume-primary-color: 205, 100%, 30%;
@@ -340,6 +347,14 @@ textarea:focus {
   color: hsl(var(--resume-text-color));
   font-size: 16pt;
   padding: 2em;
+  overflow: hidden;
+}
+
+@media print {
+  .resume {
+    overflow: visible;
+    box-shadow: none;
+  }
 }
 
 @container (width < 209mm) {

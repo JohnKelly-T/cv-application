@@ -84,8 +84,9 @@ function App() {
           onShow={(i = 5) => setActiveFormIndex(i)}
         ></MoreForm>
       </div>
-      <div className="cv-container" >
+      <div className="cv-container">
         <ResumePreview data={data} contentRef={contentRef}></ResumePreview>
+        <div className="preview-size">A4 preview</div>
       </div>
 
       <div className="buttons-container">
