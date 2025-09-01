@@ -8,6 +8,7 @@ import EducationForm from "./components/EducationForm";
 import SkillsForm from "./components/SkillsForm";
 import MoreForm from "./components/MoreForm";
 import { defaultData } from "./default-data";
+import { DeleteIcon, ResetIcon, PrinterIcon } from "./icons";
 
 function App() {
   const [data, setData] = useState(defaultData);
@@ -60,6 +61,18 @@ function App() {
       </div>
       <div className="cv-container">
         <ResumePreview data={data}></ResumePreview>
+      </div>
+
+      <div className="buttons-container">
+        <button className="clear-button">
+          <DeleteIcon />
+        </button>
+        <button className="reset-button">
+          <ResetIcon />
+        </button>
+        <button className="print-button">
+          <PrinterIcon />
+        </button>
       </div>
     </>
   );
