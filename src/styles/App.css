@@ -510,9 +510,15 @@ textarea:focus {
   cursor: pointer;
 }
 
-.buttons-container button svg {
+.buttons-container button svg,
+.toggle-preview-button svg {
   width: 1.5rem;
   aspect-ratio: 1;
+}
+
+button.toggle-preview-button {
+  color: hsl(205, 100%, 25%);
+  display: none;
 }
 
 button.clear-button {
@@ -545,4 +551,32 @@ button.print-button {
   box-shadow:
     0 0 0 2px white,
     0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (max-width: 1200px) {
+  #root {
+    align-items: center;
+  }
+
+  .cv-container.hide,
+  .form-container.hide {
+    display: none;
+  }
+
+  .cv-container.show {
+    display: block;
+  }
+
+  .form-container.show {
+    display: flex;
+  }
+
+  .form-container {
+    width: 60%;
+    min-height: 80vh;
+  }
+
+  button.toggle-preview-button {
+    display: grid;
+  }
 }
