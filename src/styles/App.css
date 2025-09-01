@@ -14,14 +14,6 @@
   --input-stroke: 205, 20%, 90%;
   --input-focus-stroke: 205, 100%, 80%;
 
-  /* resume variables */
-  --resume-primary-color: 205, 100%, 30%;
-  --resume-text-color: 205, 10%, 30%;
-  --resume-sidebar-color: 205, 25%, 95%;
-  --resume-separator-color: 205, 30%, 70%;
-
-  --sidebar-text-color: 205, 50%, 30%;
-
   position: relative;
   background-color: hsl(var(--background-color-hsl));
   min-height: 100vh;
@@ -328,6 +320,15 @@ textarea:focus {
 }
 
 .resume {
+  /* resume variables */
+  --resume-primary-color: 205, 100%, 30%;
+  --resume-text-color: 205, 10%, 30%;
+  --resume-sidebar-color: 205, 25%, 95%;
+  --resume-separator-color: 205, 30%, 70%;
+
+  --sidebar-text-color: 205, 50%, 30%;
+
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   display: grid;
   grid-template-columns: 1fr auto;
   grid-template-rows: auto 1fr;
