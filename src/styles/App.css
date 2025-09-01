@@ -22,6 +22,7 @@
 
   --sidebar-text-color: 205, 50%, 30%;
 
+  position: relative;
   background-color: hsl(var(--background-color-hsl));
   min-height: 100vh;
   display: flex;
@@ -470,4 +471,62 @@ textarea:focus {
   font-size: 0.55em;
   margin: 0;
   padding: 0 0 0 2em;
+}
+
+.buttons-container {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  right: 2rem;
+  bottom: 2rem;
+}
+
+.buttons-container button {
+  display: grid;
+  place-content: center;
+  width: 2.5rem;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  border: none;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background: white;
+  cursor: pointer;
+}
+
+.buttons-container button svg {
+  width: 1.5rem;
+  aspect-ratio: 1;
+}
+
+button.clear-button {
+  color: hsl(0, 100%, 25%);
+}
+
+.clear-button:hover {
+  box-shadow:
+    0 0 0 2px hsl(0, 100%, 25%),
+    0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+button.reset-button {
+  color: hsl(205, 100%, 25%);
+}
+
+.reset-button:hover {
+  box-shadow:
+    0 0 0 2px hsl(205, 100%, 25%),
+    0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+button.print-button {
+  background: hsl(205, 100%, 25%);
+  color: white;
+}
+
+.print-button:hover {
+  background: hsl(205, 100%, 35%);
+  box-shadow:
+    0 0 0 2px white,
+    0 4px 4px rgba(0, 0, 0, 0.25);
 }
