@@ -70,9 +70,11 @@ function ResumePreview({ data }) {
             ) : null}
           </ResumeSection>
 
-          <ResumeSection heading="SKILLS">
-            {data.skills ? <SideBarList list={data.skills} /> : null}
-          </ResumeSection>
+          {data.skills && data.skills.length !== 0 ? (
+            <ResumeSection heading="SKILLS">
+              <SideBarList list={data.skills} />
+            </ResumeSection>
+          ) : null}
 
           {data.more
             ? data.more.map((section, index) => {
