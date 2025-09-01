@@ -10,14 +10,29 @@ import SkillsForm from "./components/SkillsForm";
 import MoreForm from "./components/MoreForm";
 import { defaultData } from "./default-data";
 import { dataTemplate } from "./data-template";
-import { DeleteIcon, ResetIcon, PrinterIcon } from "./icons";
+import {
+  DeleteIcon,
+  ResetIcon,
+  PrinterIcon,
+  FileIcon,
+  EditIcon,
+} from "./icons";
 
 function App() {
   const [data, setData] = useState(defaultData);
   const [activeFormIndex, setActiveFormIndex] = useState(0);
+  const [previewToggle, setPreviewToggle] = useState("form");
 
   const contentRef = useRef(null);
   const reactToPrintFn = useReactToPrint({ contentRef });
+
+  function togglePreview() {
+    if (previewToggle === "preview") {
+      setPreviewToggle("form");
+    } else if (previewToggle === "form") {
+      setPreviewToggle("preview");
+    }
+  }
 
   function clearForm() {
     let response = confirm(
@@ -41,7 +56,11 @@ function App() {
 
   return (
     <>
-      <div className="form-container">
+      <div
+        className={
+          "form-container" + (previewToggle === "form" ? " show" : " hide")
+        }
+      >
         <div className="header">
           <div className="site-name">CV Builder</div>
           <div className="site-tagline">Your perfect CV made fast and easy</div>
@@ -84,12 +103,19 @@ function App() {
           onShow={(i = 5) => setActiveFormIndex(i)}
         ></MoreForm>
       </div>
-      <div className="cv-container">
+      <div
+        className={
+          "cv-container" + (previewToggle === "preview" ? " show" : " hide")
+        }
+      >
         <ResumePreview data={data} contentRef={contentRef}></ResumePreview>
         <div className="preview-size">A4 preview</div>
       </div>
 
       <div className="buttons-container">
+        <button className="toggle-preview-button" onClick={togglePreview}>
+          {previewToggle === "preview" ? <EditIcon /> : <FileIcon />}
+        </button>
         <button className="clear-button" onClick={clearForm}>
           <DeleteIcon />
         </button>
