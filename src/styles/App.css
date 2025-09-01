@@ -580,3 +580,78 @@ button.print-button {
     display: grid;
   }
 }
+
+@media screen and (max-width: 800px) {
+  a,
+  button,
+  input,
+  textarea {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  textarea {
+    field-sizing: content;
+    min-height: 5rem;
+  }
+
+  .form-container {
+    width: 80%;
+    min-height: 80vh;
+    padding-bottom: 4rem;
+  }
+
+  button.toggle-preview-button {
+    display: grid;
+  }
+
+  #root {
+    padding: 1rem;
+    padding-bottom: 5rem;
+  }
+
+  .cv-container {
+    position: initial;
+    height: auto;
+    width: 90vw;
+    aspect-ratio: var(--a4-ratio);
+  }
+
+  @container (width < 209mm) {
+    .resume {
+      font-size: 3cqw;
+    }
+  }
+
+  .buttons-container {
+    display: flex;
+    justify-content: space-around;
+    right: auto;
+    bottom: 0;
+    padding: 1rem;
+    background: hsl(var(--background-color-hsl));
+    border: 1px solid hsl(var(--form-stroke));
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .full-name-container {
+    flex-direction: column;
+  }
+
+  #personal-information,
+  .work-experience-item,
+  .education-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input {
+    min-width: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .form-container {
+    width: 100%;
+  }
+}
