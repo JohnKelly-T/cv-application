@@ -14,6 +14,16 @@ function App() {
   const [data, setData] = useState(defaultData);
   const [activeFormIndex, setActiveFormIndex] = useState(0);
 
+  function clearForm() {
+    let response = confirm(
+      "Are you sure you want to clear the form? All entered data will be lost.",
+    );
+
+    if (response) {
+      setData({});
+    }
+  }
+
   return (
     <>
       <div className="form-container">
@@ -64,7 +74,7 @@ function App() {
       </div>
 
       <div className="buttons-container">
-        <button className="clear-button">
+        <button className="clear-button" onClick={clearForm}>
           <DeleteIcon />
         </button>
         <button className="reset-button">
