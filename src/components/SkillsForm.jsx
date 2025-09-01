@@ -30,7 +30,7 @@ function SkillsForm({ data, setData, isActive, onShow }) {
     let newData = { ...data };
 
     if (newSkills.length === 0) {
-      newData.skills = newSkills;
+      delete newData.skills;
     } else {
       newData.skills = newSkills;
     }
