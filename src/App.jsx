@@ -16,6 +16,7 @@ import {
   PrinterIcon,
   FileIcon,
   EditIcon,
+  GithubIcon,
 } from "./icons";
 
 function App() {
@@ -102,6 +103,12 @@ function App() {
           isActive={activeFormIndex === 5}
           onShow={(i = 5) => setActiveFormIndex(i)}
         ></MoreForm>
+        <div className="credits">
+          &copy; 2025 - Designed and developed by{" "}
+          <a href="https://github.com/JohnKelly-T/">
+            John Kelly Temeña <GithubIcon />
+          </a>
+        </div>
       </div>
       <div
         className={
