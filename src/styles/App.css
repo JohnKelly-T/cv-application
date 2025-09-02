@@ -1,3 +1,10 @@
+@keyframes expand {
+  from {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+}
+
 #root {
   --background-color-hsl: 205, 40%, 95%;
 
@@ -93,6 +100,10 @@
   border: 1px solid hsl(var(--form-stroke));
   border-radius: 10px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-accordion.expanded .form {
+  animation: expand 200ms ease-out;
 }
 
 .form-accordion .arrow {
@@ -214,6 +225,10 @@
 .item-accordion {
   border: 1px solid hsl(var(--form-stroke));
   border-radius: 10px;
+}
+
+.item-accordion.expanded .item-content {
+  animation: expand 200ms ease-out;
 }
 
 .item-accordion .label-button {
