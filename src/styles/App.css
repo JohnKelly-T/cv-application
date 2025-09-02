@@ -5,6 +5,33 @@
   }
 }
 
+@keyframes logoAnimation {
+  40% {
+    opacity: 1;
+    transform: translateX(-80%);
+    filter: drop-shadow(0 0 20px hsl(205, 90%, 40%));
+  }
+
+  50% {
+    opacity: 0;
+    transform: translateX(60%);
+  }
+
+  60% {
+    opacity: 0;
+    transform: translateX(-120%);
+    filter: brightness(150%);
+  }
+
+  80% {
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
 #root {
   --background-color-hsl: 205, 40%, 95%;
 
@@ -88,6 +115,10 @@
   width: 2rem;
 }
 
+.header:hover svg {
+  animation: logoAnimation 1s ease-in-out;
+}
+
 .site-tagline {
   font-size: 0.9rem;
 }
@@ -137,6 +168,7 @@
   transition: background 200ms ease;
 }
 
+.form-accordion > .label-button:hover,
 .form-accordion.expanded > .label-button {
   background: hsl(var(--form-highlight-color));
   box-shadow: inset 0 0 0 0.3rem white;
@@ -271,6 +303,11 @@
   cursor: pointer;
 }
 
+.delete-button:hover {
+  color: hsl(0, 100%, 25%);
+  transition: color 200ms ease;
+}
+
 .work-experience-item,
 .education-item {
   display: grid;
@@ -291,6 +328,10 @@
   cursor: pointer;
   margin-top: 1rem;
   margin-bottom: -0.5rem;
+}
+
+.add-item-button:hover {
+  filter: brightness(120%);
 }
 
 #skills {
