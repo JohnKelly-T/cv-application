@@ -69,7 +69,7 @@ function App() {
             Lightning CV
           </div>
           <div className="site-tagline">
-            Your perfect CV made fast and effortless
+            Your perfect CV made fast and effortless.
           </div>
         </div>
 
