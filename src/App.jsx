@@ -17,6 +17,7 @@ import {
   FileIcon,
   EditIcon,
   GithubIcon,
+  SiteLogo,
 } from "./icons";
 
 function App() {
@@ -63,7 +64,10 @@ function App() {
         }
       >
         <div className="header">
-          <div className="site-name">CV Builder</div>
+          <div className="site-name">
+            <SiteLogo />
+            Lightning CV
+          </div>
           <div className="site-tagline">Your perfect CV made fast and easy</div>
         </div>
 
