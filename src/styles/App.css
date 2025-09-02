@@ -436,7 +436,7 @@ textarea:focus {
   color: hsl(var(--resume-text-color));
   font-size: 16pt;
   padding: 2em;
-  overflow: hidden;
+  overflow-y: auto;
 }
 
 @container (width < 209mm) {
