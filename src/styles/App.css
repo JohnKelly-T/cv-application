@@ -48,12 +48,14 @@
 }
 
 .form-container {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
   min-height: 90vh;
   width: 40%;
+  padding-bottom: 6rem;
 }
 
 .header {
@@ -574,6 +576,29 @@ button.print-button {
     0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.credits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+  justify-content: center;
+  position: absolute;
+  bottom: 1rem;
+  color: hsl(var(--form-text-color));
+  font-size: 0.9rem;
+}
+
+.credits svg {
+  width: 1.5rem;
+  aspect-ratio: 1;
+}
+
+.credits a {
+  display: flex;
+  gap: 0.2rem;
+  color: inherit;
+  text-underline-offset: 4px;
+}
+
 @media screen and (max-width: 1200px) {
   #root {
     align-items: center;
@@ -618,7 +643,7 @@ button.print-button {
   .form-container {
     width: 80%;
     min-height: 80vh;
-    padding-bottom: 4rem;
+    padding-bottom: 10rem;
   }
 
   button.toggle-preview-button {
