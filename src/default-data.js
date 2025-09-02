@@ -7,7 +7,7 @@ export const defaultData = {
     "Dedicated  and detail-oriented Computer Science graduate with a strong foundation in full-stack web development. A consistent Dean's Lister and DOST-SEI Merit scholar, I've spent the past year mastering HTML, CSS, JavaScript, React, and Node.js through The Odin Project. Eager to leverage my skills and contribute to a dynamic team in a junior web developer role.",
   phone: "+63 906 430 5493",
   email: "johnkellytemena@gmail.com",
-  website: "",
+  website: "johnkelly.vercel.app",
   github: "github.com/JohnKelly-T",
   location: "Dasmariñas, Philippines",
   experiences: [
