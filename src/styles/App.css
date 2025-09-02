@@ -26,6 +26,27 @@
   font-family: "Inter", Arial, Helvetica, sans-serif;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: hsl(205, 40%, 95%);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: hsl(205, 70%, 70%);
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(205, 70%, 60%);
+}
+
 .form-container {
   display: flex;
   flex-direction: column;
