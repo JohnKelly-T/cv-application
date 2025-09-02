@@ -439,16 +439,9 @@ textarea:focus {
   overflow: hidden;
 }
 
-@media print {
-  .resume {
-    overflow: visible;
-    box-shadow: none;
-  }
-}
-
 @container (width < 209mm) {
   .resume {
-    font-size: 1.9cqh;
+    font-size: 1.85cqh;
   }
 }
 
@@ -765,5 +758,20 @@ button.print-button {
 @media screen and (max-width: 600px) {
   .form-container {
     width: 100%;
+  }
+}
+
+@media print {
+  .resume {
+    overflow: visible;
+    box-shadow: none;
+  }
+
+  .resume-section:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    bottom: -0.8em;
+    width: 100%;
+    border-top: 1px dashed hsl(205, 30%, 70%);
   }
 }
