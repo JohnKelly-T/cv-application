@@ -26,7 +26,14 @@ function App() {
   const [previewToggle, setPreviewToggle] = useState("form");
 
   const contentRef = useRef(null);
-  const reactToPrintFn = useReactToPrint({ contentRef });
+  let documentTitle =
+    data.firstName || data.lastName
+      ? data.firstName + " " + data.lastName + " CV"
+      : "LightningCV";
+  const reactToPrintFn = useReactToPrint({
+    contentRef,
+    documentTitle: documentTitle,
+  });
 
   function togglePreview() {
     if (previewToggle === "preview") {
