@@ -46,12 +46,6 @@ export const defaultData = {
         "Magna Cum Laude\nConsistent Dean's Lister\nDOST-SEI Merit Scholar",
     },
   ],
-  skills: [
-    "Adaptability",
-    "Attention to detail",
-    "Communication",
-    "Problem Solving",
-  ],
   more: [
     {
       heading: "Languages",
@@ -72,6 +66,23 @@ export const defaultData = {
     {
       heading: "Interests",
       list: ["Front-end Development, Back-end Development, UI/UX"],
+    },
+    {
+      heading: "Certificates",
+      list: [
+        {
+          linkText: "Hardvard University's CS50",
+          url: "https://cs50.harvard.edu/certificates/b36b4087-6f03-4479-a2a2-e836306f9b4c",
+        },
+        {
+          linkText: "Cisco Network Technician",
+          url: "https://www.credly.com/badges/b073a0a7-ed8f-4e7d-81d5-426031f68a9a/public_url",
+        },
+        {
+          linkText: "Postman API Fundamentals Student Expert",
+          url: "https://api.badgr.io/public/assertions/RYaynSIaQrC2vuMBGQAdEg?identity__email=johnkellytemena%40gmail.com",
+        },
+      ],
     },
   ],
 };
