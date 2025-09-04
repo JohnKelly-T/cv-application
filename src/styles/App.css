@@ -352,6 +352,31 @@
   flex: 1;
 }
 
+.item-input-link {
+  display: flex;
+  gap: 0.8rem;
+  border: 1px solid hsl(var(--form-stroke));
+  border-radius: 10px;
+  padding: 0.4rem;
+}
+
+.input-link-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.item-input-link .delete-button {
+  align-self: start;
+}
+
+.section-buttons-container {
+  display: flex;
+  justify-content: end;
+  gap: 0.8rem;
+}
+
 #more {
   display: flex;
   flex-direction: column;
