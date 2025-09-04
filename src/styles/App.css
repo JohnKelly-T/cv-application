@@ -422,6 +422,11 @@ textarea:focus {
   box-shadow: 0 0 0 2px hsl(var(--input-focus-stroke));
 }
 
+a {
+  color: hsl(205, 50%, 50%);
+  text-decoration: none;
+}
+
 /* CV Container styles */
 
 .cv-container {
