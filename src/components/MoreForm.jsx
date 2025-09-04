@@ -4,6 +4,7 @@ import { MoreIcon, AddIcon } from "../icons";
 import ItemAccordion from "./ItemAccordion";
 import Input from "./Input";
 import ItemInput from "./ItemInput";
+import ItemInputLink from "./ItemInputLink";
 
 function MoreForm({ data, setData, isActive, onShow }) {
   const [activeItemIndex, setActiveItemIndex] = useState(0);
@@ -75,6 +76,30 @@ function MoreForm({ data, setData, isActive, onShow }) {
     setData({ ...data, more: newSections });
   }
 
+  function handleAddLink(sectionIndex) {
+    let newSections = [...data.more];
+
+    newSections[sectionIndex].list.push({ linkText: "", url: "" });
+
+    setData({ ...data, more: newSections });
+  }
+
+  function handleLinkChange(sectionIndex, itemIndex, e) {
+    let newSections = [...data.more];
+
+    newSections[sectionIndex].list[itemIndex].linkText = e.target.value;
+
+    setData({ ...data, more: newSections });
+  }
+
+  function handleURLChange(sectionIndex, itemIndex, e) {
+    let newSections = [...data.more];
+
+    newSections[sectionIndex].list[itemIndex].url = e.target.value;
+
+    setData({ ...data, more: newSections });
+  }
+
   return (
     <FormAccordion
       label="More"
@@ -101,26 +126,53 @@ function MoreForm({ data, setData, isActive, onShow }) {
                   {section.list.map((item, itemIndex) => {
                     let sectionIndex = index;
 
-                    return (
-                      <ItemInput
-                        key={itemIndex}
-                        value={item}
-                        onChange={(e) =>
-                          handleItemChange(sectionIndex, itemIndex, e)
-                        }
-                        onDelete={() =>
-                          handleDeleteItem(sectionIndex, itemIndex)
-                        }
-                      />
-                    );
+                    if (typeof item === "object") {
+                      return (
+                        <ItemInputLink
+                          key={itemIndex}
+                          linkText={item.linkText}
+                          url={item.url}
+                          onLinkChange={(e) =>
+                            handleLinkChange(sectionIndex, itemIndex, e)
+                          }
+                          onURLChange={(e) =>
+                            handleURLChange(sectionIndex, itemIndex, e)
+                          }
+                          onDelete={() =>
+                            handleDeleteItem(sectionIndex, itemIndex)
+                          }
+                        />
+                      );
+                    } else {
+                      return (
+                        <ItemInput
+                          key={itemIndex}
+                          value={item}
+                          onChange={(e) =>
+                            handleItemChange(sectionIndex, itemIndex, e)
+                          }
+                          onDelete={() =>
+                            handleDeleteItem(sectionIndex, itemIndex)
+                          }
+                        />
+                      );
+                    }
                   })}
 
-                  <button
-                    className="add-item-button"
-                    onClick={() => handleAddItem(index)}
-                  >
-                    <AddIcon /> Add section item
-                  </button>
+                  <div className="section-buttons-container">
+                    <button
+                      className="add-item-button"
+                      onClick={() => handleAddLink(index)}
+                    >
+                      <AddIcon /> Add Link
+                    </button>
+                    <button
+                      className="add-item-button"
+                      onClick={() => handleAddItem(index)}
+                    >
+                      <AddIcon /> Add section item
+                    </button>
+                  </div>
                 </ItemAccordion>
               );
             })
