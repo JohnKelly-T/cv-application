@@ -613,11 +613,13 @@ button.clear-button {
     0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-button.reset-button {
+button.reset-button,
+button.download-button {
   color: hsl(205, 100%, 25%);
 }
 
-.reset-button:hover {
+.reset-button:hover,
+.download-button:hover {
   box-shadow:
     0 0 0 2px hsl(205, 100%, 25%),
     0 4px 4px rgba(0, 0, 0, 0.25);
@@ -774,4 +776,12 @@ button.print-button {
     width: 100%;
     border-top: 1px dashed hsl(205, 30%, 70%);
   }
+}
+
+.resume.save-pdf {
+  width: 210mm;
+  height: 297mm;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 17pt;
 }
