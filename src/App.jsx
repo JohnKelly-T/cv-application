@@ -1,5 +1,7 @@
 import { useState, useRef } from "react";
 import { useReactToPrint } from "react-to-print";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 import "./styles/App.css";
 import ResumePreview from "./components/ResumePreview";
 import PersonalInfoForm from "./components/PersonalInfoForm";
@@ -18,6 +20,8 @@ import {
   EditIcon,
   GithubIcon,
   SiteLogo,
+  DownloadFileIcon,
+  PreviewIcon,
 } from "./icons";
 
 function App() {
@@ -34,6 +38,30 @@ function App() {
     contentRef,
     documentTitle: documentTitle,
   });
+
+  const cvContainerRef = useRef(null);
+
+  function savePDF() {
+    //temporarily add save pdf class to match a4 dimensions
+    let resume = contentRef.current;
+    resume.classList.add("save-pdf");
+    cvContainerRef.current.classList.add("show");
+    cvContainerRef.current.classList.remove("hide");
+
+    html2canvas(resume).then(function (canvas) {
+      const imgData = canvas.toDataURL("image/png");
+      // const pdf = new jsPDF();
+      const pdf = new jsPDF("p", "mm", "a4", false);
+      pdf.addImage(imgData, "PNG", 0, 0, 210, 0, undefined, false);
+      pdf.save("download.pdf");
+    });
+
+    resume.classList.remove("save-pdf");
+    if (previewToggle === "form") {
+      cvContainerRef.current.classList.add("hide");
+      cvContainerRef.current.classList.remove("show");
+    }
+  }
 
   function togglePreview() {
     if (previewToggle === "preview") {
@@ -124,6 +152,7 @@ function App() {
         </div>
       </div>
       <div
+        ref={cvContainerRef}
         className={
           "cv-container" + (previewToggle === "preview" ? " show" : " hide")
         }
@@ -134,13 +163,16 @@ function App() {
 
       <div className="buttons-container">
         <button className="toggle-preview-button" onClick={togglePreview}>
-          {previewToggle === "preview" ? <EditIcon /> : <FileIcon />}
+          {previewToggle === "preview" ? <EditIcon /> : <PreviewIcon />}
         </button>
         <button className="clear-button" onClick={clearForm}>
           <DeleteIcon />
         </button>
         <button className="reset-button" onClick={resetForm}>
           <ResetIcon />
+        </button>
+        <button className="download-button" onClick={savePDF}>
+          <DownloadFileIcon />
         </button>
         <button className="print-button" onClick={reactToPrintFn}>
           <PrinterIcon />
